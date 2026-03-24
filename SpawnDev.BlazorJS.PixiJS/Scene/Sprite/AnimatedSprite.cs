@@ -49,6 +49,11 @@ namespace SpawnDev.BlazorJS.PixiJS
             public bool Playing => JSRef!.Get<bool>("playing");
 
             /// <summary>
+            /// The array of textures used for this AnimatedSprite.
+            /// </summary>
+            public Texture[] Textures { get => JSRef!.Get<Texture[]>("textures"); set => JSRef!.Set("textures", value); }
+
+            /// <summary>
             /// The total number of frames in the AnimatedSprite. This is the same as textures.length.
             /// </summary>
             public int TotalFrames => JSRef!.Get<int>("totalFrames");
@@ -79,6 +84,12 @@ namespace SpawnDev.BlazorJS.PixiJS
             /// </summary>
             /// <param name="frameNumber">Frame index to stop at.</param>
             public void GotoAndStop(int frameNumber) => JSRef!.CallVoid("gotoAndStop", frameNumber);
+
+            /// <summary>
+            /// A short hand way of creating an AnimatedSprite from an array of frame ids.
+            /// </summary>
+            /// <param name="frames">The array of frames ids the AnimatedSprite will use as its texture frames.</param>
+            public void FromFrames(string[] frames) => JSRef!.CallVoid("fromFrames", frames);
         }
     }
 }
