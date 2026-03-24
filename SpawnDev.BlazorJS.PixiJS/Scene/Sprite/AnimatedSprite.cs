@@ -1,4 +1,5 @@
 using Microsoft.JSInterop;
+using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.PixiJS
 {
@@ -57,6 +58,11 @@ namespace SpawnDev.BlazorJS.PixiJS
             /// The AnimatedSprites current frame index.
             /// </summary>
             public int CurrentFrame { get => JSRef!.Get<int>("currentFrame"); set => JSRef!.Set("currentFrame", value); }
+
+            /// <summary>
+            /// The array of textures used by the AnimatedSprite.
+            /// </summary>
+            public Array<Texture> Textures => JSRef!.Get<Array<Texture>>("textures");
 
             /// <summary>
             /// Plays the AnimatedSprite.
