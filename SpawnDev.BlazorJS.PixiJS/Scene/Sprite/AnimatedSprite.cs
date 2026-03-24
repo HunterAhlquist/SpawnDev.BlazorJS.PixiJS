@@ -62,7 +62,7 @@ namespace SpawnDev.BlazorJS.PixiJS
             /// <summary>
             /// The array of textures used for this AnimatedSprite.
             /// </summary>
-            public Texture[] Textures { get => JSRef!.Get<Texture[]>("textures"); set => JSRef!.Set("textures", value); }
+            public Array<Texture> Textures { get => JSRef!.Get<Array<Texture>>("textures"); set => JSRef!.Set("textures", value); }
 
             /// <summary>
             /// Plays the AnimatedSprite.

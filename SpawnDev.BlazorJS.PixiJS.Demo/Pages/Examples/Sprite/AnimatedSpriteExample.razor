@@ -83,7 +83,7 @@
         var catSpin = new AnimatedSprite(multiAnimSpritesheet.Animations["Black"]);
         catSpin.OnClick += () =>
         {
-            catSpin.Textures = WhiteCat ? multiAnimSpritesheet.Animations["Black"] : multiAnimSpritesheet.Animations["White"];
+            catSpin.Textures = WhiteCat ? new Array<Texture>(multiAnimSpritesheet.Animations["Black"]) : new Array<Texture>(multiAnimSpritesheet.Animations["White"]);
             WhiteCat = !WhiteCat;
             //Updating AnimatedSprite.Textures will stop animation
             catSpin.Play();
